@@ -4,7 +4,7 @@ static int b = 1;
 static int c = 1;
 static int k = 1;
 int prog_50_500(){
-for(int k = 0; k < 50; k++){
+for(int k = 0; k < 500000; k++){
 a += k;
 b = a * 2;
 c = ((a*8) - b*3) >> 2;
@@ -1506,7 +1506,7 @@ a += k;
 b = a * 2;
 c = ((a*8) - b*3) >> 2;
 }
- return a;
+ return b;
  }
 
  int get_a_50_500(){

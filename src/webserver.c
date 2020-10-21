@@ -12,7 +12,10 @@
 #include "program_500_500.h"
 #include "program_1000_500.h"
 #include "program_1000_1000.h"
+#include "program_10000_1000.h"
 #include "program_100000_1000.h"
+#include "program_1000_10000.h"
+#include "program_10000_10000.h"
 
 const char * dbName = "webserberUser.ignore.db";
 const char * logPath = "log.ignore.out";
@@ -269,18 +272,30 @@ void receive_get(int fd, rio_t rio, char * uri){
             retProg = prog_1000_500();
         } else if(prefix("/program/1000_1000",uri)){
             retProg = prog_1000_1000();
+        } else if(prefix("/program/10000_1000",uri)){
+            retProg = prog_10000_1000();
+        }  else if(prefix("/program/1000_10000",uri)){
+            retProg = prog_1000_10000();
+        }  else if(prefix("/program/10000_10000",uri)){
+            retProg = prog_10000_10000();
         } else if(prefix("/program/100000_1000",uri)){
             retProg = prog_100000_1000();
         }
 
         int k =  get_k_50_1000();
+        k+=get_a_10000_10000();
+        k+=get_a_1000_10000();
         k+=get_a_100000_1000();
+        k+=get_a_10000_1000();
         k+=get_a_1000_1000();
         k+=get_a_100_1000();
         k+=get_a_100_500();
         k+=get_a_50_1000();
         k+=get_a_50_500();
+        k+=get_b_10000_10000();
+        k+=get_b_1000_10000();
         k+=get_b_100000_1000();
+        k+=get_b_10000_1000();
         k+=get_b_1000_1000();
         k+=get_b_1000_500();
         k+=get_b_100_1000();
@@ -288,7 +303,10 @@ void receive_get(int fd, rio_t rio, char * uri){
         k+=get_b_500_500();
         k+=get_b_50_1000();
         k+=get_b_50_500();
+        k+=get_c_10000_10000();
+        k+=get_c_1000_10000();
         k+=get_c_100000_1000();
+        k+=get_c_10000_1000();
         k+=get_c_1000_1000();
         k+=get_c_1000_500();
         k+=get_c_100_1000();
@@ -296,7 +314,10 @@ void receive_get(int fd, rio_t rio, char * uri){
         k+=get_c_500_500();
         k+=get_c_50_1000();
         k+=get_c_50_500();
+        k+=get_k_10000_10000();
+        k+=get_k_1000_10000();
         k+=get_k_100000_1000();
+        k+=get_k_10000_1000();
         k+=get_k_1000_1000();
         k+=get_k_1000_500();
         k+=get_k_100_1000();

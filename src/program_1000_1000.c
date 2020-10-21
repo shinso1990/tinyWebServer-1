@@ -5,7 +5,7 @@ static int b = 1;
 static int c = 1;
 static int k = 1;
 int prog_1000_1000(){
-for(int k = 0; k < 1000; k++){
+for(int k = 0; k < 10000000; k++){
 a += k;
 b = a * 2;
 c = ((a*8) - b*3) >> 2;

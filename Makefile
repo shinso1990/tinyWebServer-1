@@ -55,8 +55,11 @@ c:
 	gcc -pthread -g -Werror -O1   -c -o src/program_500_500.ignore.o src/program_500_500.c
 	gcc -pthread -g -Werror -O1   -c -o src/program_1000_500.ignore.o src/program_1000_500.c
 	gcc -pthread -g -Werror -O1   -c -o src/program_1000_1000.ignore.o src/program_1000_1000.c
+	gcc -pthread -g -Werror -O1   -c -o src/program_1000_10000.ignore.o src/program_1000_10000.c
+	gcc -pthread -g -Werror -O1   -c -o src/program_10000_10000.ignore.o src/program_10000_10000.c
+	gcc -pthread -g -Werror -O1   -c -o src/program_10000_1000.ignore.o src/program_10000_1000.c
 	gcc -pthread -g -Werror -O1   -c -o src/program_100000_1000.ignore.o src/program_100000_1000.c
-	gcc -pthread -g -Werror -O1 -o tinyWebServer.ignore.c src/program_100000_1000.ignore.o src/program_1000_1000.ignore.o src/program_1000_500.ignore.o src/program_500_500.ignore.o src/program_100_1000.ignore.o src/program_100_500.ignore.o src/program_50_1000.ignore.o src/program_50_500.ignore.o src/user.ignore.o src/sortNumbers.ignore.o src/extraFunctions.ignore.o src/userParser.ignore.o src/csapp.ignore.o src/webserver.ignore.o -l sqlite3 $(CPP_CFLAGS) $(CPP_LDFLAGS)
+	gcc -pthread -g -Werror -O1 -o tinyWebServer.ignore.c src/program_1000_10000.ignore.o src/program_10000_10000.ignore.o src/program_10000_1000.ignore.o src/program_100000_1000.ignore.o src/program_1000_1000.ignore.o src/program_1000_500.ignore.o src/program_500_500.ignore.o src/program_100_1000.ignore.o src/program_100_500.ignore.o src/program_50_1000.ignore.o src/program_50_500.ignore.o src/user.ignore.o src/sortNumbers.ignore.o src/extraFunctions.ignore.o src/userParser.ignore.o src/csapp.ignore.o src/webserver.ignore.o -l sqlite3 $(CPP_CFLAGS) $(CPP_LDFLAGS)
 
 clog:
 	gcc -pthread -g -Werror -O2   -c -o src-log/user.ignore.o src-log/user.c -l sqlite3
@@ -71,4 +74,3 @@ clog5:
 	gcc-5 -pthread -g -Werror -O2   -c -o src-log/csapp.ignore.o src-log/csapp.c
 	gcc-5 -pthread -g -Werror -O2   -c -o src-log/webserver.ignore.o src-log/webserver.c
 	gcc-5 -pthread -g -Werror -O2 -o tinyWebServer.ignore.clog5 src-log/user.ignore.o src-log/userParser.ignore.o src-log/csapp.ignore.o src-log/webserver.ignore.o -l sqlite3 $(CPP_CFLAGS) $(CPP_LDFLAGS)
-
