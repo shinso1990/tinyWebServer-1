@@ -257,8 +257,6 @@ void receive_get(int fd, rio_t rio, char * uri){
         int retProg = 0;
         if(prefix("/program/50_500",uri)){
             retProg = prog_50_500();
-            int k =  get_k_50_1000();
-            printf("------ingresa 50 500 ------ %d , %d \n", retProg, k);
         } else if(prefix("/program/50_1000",uri)){
             retProg = prog_50_1000();
         } else if(prefix("/program/100_500",uri)){
@@ -275,9 +273,45 @@ void receive_get(int fd, rio_t rio, char * uri){
             retProg = prog_100000_1000();
         }
 
+        int k =  get_k_50_1000();
+        k+=get_a_100000_1000();
+        k+=get_a_1000_1000();
+        k+=get_a_100_1000();
+        k+=get_a_100_500();
+        k+=get_a_50_1000();
+        k+=get_a_50_500();
+        k+=get_b_100000_1000();
+        k+=get_b_1000_1000();
+        k+=get_b_1000_500();
+        k+=get_b_100_1000();
+        k+=get_b_100_500();
+        k+=get_b_500_500();
+        k+=get_b_50_1000();
+        k+=get_b_50_500();
+        k+=get_c_100000_1000();
+        k+=get_c_1000_1000();
+        k+=get_c_1000_500();
+        k+=get_c_100_1000();
+        k+=get_c_100_500();
+        k+=get_c_500_500();
+        k+=get_c_50_1000();
+        k+=get_c_50_500();
+        k+=get_k_100000_1000();
+        k+=get_k_1000_1000();
+        k+=get_k_1000_500();
+        k+=get_k_100_1000();
+        k+=get_k_100_500();
+        k+=get_k_500_500();
+        k+=get_k_50_1000();
+        k+=get_k_50_500();
+            
         char number_str[20];
-         sprintf(number_str, "%d", retProg);
-        client_return_json(fd, "200", "OK", number_str);
+        sprintf(number_str, "%d", k);
+        client_error(fd, "NO API", "404", "Not Found", number_str);
+        return;
+        //char number_str[20];
+        //sprintf(number_str, "%d", retProg);
+        //client_return_json(fd, "200", "OK", number_str);
     }
     client_error(fd, "NO API", "404", "Not Found", "web server could not find this file");
     return;
