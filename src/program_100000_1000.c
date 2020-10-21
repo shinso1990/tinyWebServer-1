@@ -1,11 +1,11 @@
-#include "program_1000_1000.h"
+#include "program_100000_1000.h"
 
 static int a = 1;
 static int b = 1;
 static int c = 1;
 static int k = 1;
-int prog_1000_1000(){
-for(int k = 0; k < 1000; k++){
+int prog_100000_1000(){
+for(int k = 0; k < 100000; k++){
 a += k;
 b = a * 2;
 c = ((a*8) - b*3) >> 2;
@@ -3009,15 +3009,15 @@ c = ((a*8) - b*3) >> 2;
 }
  return b;
  }
- int get_a_1000_1000(){
+ int get_a_100000_1000(){
      return a;
  }
- int get_b_1000_1000(){
+ int get_b_100000_1000(){
      return b;
  }
- int get_c_1000_1000(){
+ int get_c_100000_1000(){
      return c;
  }
- int get_k_1000_1000(){
+ int get_k_100000_1000(){
      return k;
  }

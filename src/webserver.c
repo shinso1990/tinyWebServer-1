@@ -12,6 +12,7 @@
 #include "program_500_500.h"
 #include "program_1000_500.h"
 #include "program_1000_1000.h"
+#include "program_100000_1000.h"
 
 const char * dbName = "webserberUser.ignore.db";
 const char * logPath = "log.ignore.out";
@@ -256,6 +257,8 @@ void receive_get(int fd, rio_t rio, char * uri){
         int retProg = 0;
         if(prefix("/program/50_500",uri)){
             retProg = prog_50_500();
+            int k =  get_k_50_1000();
+            printf("------ingresa 50 500 ------ %d , %d \n", retProg, k);
         } else if(prefix("/program/50_1000",uri)){
             retProg = prog_50_1000();
         } else if(prefix("/program/100_500",uri)){
@@ -268,6 +271,8 @@ void receive_get(int fd, rio_t rio, char * uri){
             retProg = prog_1000_500();
         } else if(prefix("/program/1000_1000",uri)){
             retProg = prog_1000_1000();
+        } else if(prefix("/program/100000_1000",uri)){
+            retProg = prog_100000_1000();
         }
 
         char number_str[20];
